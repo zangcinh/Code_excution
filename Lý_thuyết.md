@@ -12,35 +12,35 @@
 
 **b) Ví dụ**
 
-'''
+```
 <?php eval("echo ".$_GET["user"].";"); ?>
-'''
+```
 
 Người phát triển có thể nghĩa rằng người dùng chỉ nhập tên người dùng hợp lệ làm tham số cho URL
 
-'''
+```
 http://www.example.com/index.php?user=admin
-'''
+```
 
 Sau đó, ứng dụng sẽ chạy giá trị tham số dưới dạng mã
 
-'''
+```
 echo admin;
-'''
+```
 và in tên người dùng
 
 Kẻ tấn công có thể chèn mã độc vào bằng cách chèn dấu `;` vào đằng sau URL
 
-'''
+```
 http://www.example.com/index.php?user=admin;phpinfo();
-'''
+```
 
 Sau đó, đoạn code sẽ được thực thi như sau
 
-'''
+```
 echo admin;
 phpinfo();
-'''
+```
 
 **2. ACE**
 
